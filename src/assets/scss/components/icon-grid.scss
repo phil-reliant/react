@@ -1,0 +1,68 @@
+.icon-grid {
+	margin-bottom: -30px;
+
+	@include respond-above($bp-md) {
+		margin-bottom: -36px;
+	}
+	h5 {
+		margin-bottom: 36px;
+	}
+
+	
+
+	.icon-grid-container {
+		.icon-grid-item {
+			padding-bottom: rem-calc(30);
+			@include respond-above($bp-md) {
+				padding-bottom: rem-calc(36);
+			}
+			img {
+				width: 69px;
+				height: 69px;
+				margin-bottom: rem-calc(30);
+
+				@include respond-above($bp-md) {
+					width: 90px;
+					height: 90px;
+				}
+			}
+			.h3 {
+				font-size: 20px;
+				letter-spacing: 0.05px;
+				line-height: 23px;
+				color: $light-text-primary;
+				margin-bottom: 13px;
+			}
+			p {
+				font-size: rem-calc(15);
+				line-height: rem-calc(21);
+				margin-bottom: 0;
+			}
+
+			.buttons {
+				flex-wrap: nowrap;
+				flex-direction: column;
+				align-items: flex-start;
+
+				.button.--link {
+
+					&:not(:last-child) {
+						margin-bottom: 0px;
+					}
+				}
+			}
+		}
+	}
+
+	&__cta-buttons {
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+		@include respond-above($bp-md) {
+			margin-top: 50px;
+			margin-bottom: 36px;
+		}
+	}
+
+
+}

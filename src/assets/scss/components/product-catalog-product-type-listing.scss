@@ -1,0 +1,54 @@
+.product-catalog-product-type-listing {
+	@include respond-above($bp-sm) {
+		margin-top: 50px;
+	}
+
+	// TODO:: duplicated here and in product type listing
+	.section-heading {
+		font-size: 18px;
+		font-family: $heading;
+		font-weight: $bold;
+		margin-bottom: 11px;
+	}
+
+	// TODO:: duplicated here and in brand listing
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 270px;
+
+		.checkbox-item {
+			display: block;
+			cursor: pointer;
+			margin-right: 7px;
+			margin-bottom: 10px;
+
+			@include respond-above($bp-sm) {
+				margin-bottom: 14px;
+			}
+
+			input.text {
+				display: none;
+			}
+
+			span.check {
+				display: inline-block;
+				border: $soft-black solid 1px;
+				width: 128px;
+				height: 35px;
+				padding-top: rem-calc(6);
+				font-family: $heading;
+				font-size: 14px;
+				font-weight: $regular;
+				letter-spacing: 0;
+				text-align: center;
+				color: $soft-black;
+			}
+		}
+
+		.checkbox-item > input[type="checkbox"]:checked + .check {
+			background-color: $green;
+			border: $green solid 1px;
+		}
+	}
+}

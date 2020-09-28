@@ -1,0 +1,48 @@
+.layout-type-casestudiesfeatured {
+	background-color: $white;
+}
+ 
+.case-study-featured-slider {
+	&__slick-wrapper {
+		.slick-list {
+			overflow: visible; // make slider full-bleed instead of cutting off at column edge
+			margin-right: -8px; // for adding space between slides (ref: https://github.com/kenwheeler/slick/issues/582#issuecomment-61882540)
+		}
+	}
+
+	.case-study-featured-slider__slide {
+		margin-right: 8px;
+
+		.case-study-featured-slider__slide__inner {
+			&-content-wrap {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				padding: rem-calc(22);
+				min-height: 276px;
+				width: 262px;
+				background-color: $dk-grey;
+
+				&-heading {
+					font-family: $heading;
+					font-size: 13px;
+					font-weight: $bold;
+					letter-spacing: 1.73px;
+					text-align: center;
+					line-height: 13px;
+					color: $dark-text-primary;
+					text-transform: uppercase;
+				}
+
+				&-title {
+					font-size: 15px;
+					font-weight: $bold;
+					letter-spacing: 0.04px;
+					text-align: center;
+					line-height: 21px;
+					color: $dark-text-primary;
+				}
+			}
+		}
+	}
+}

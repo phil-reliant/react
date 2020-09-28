@@ -1,0 +1,73 @@
+input {
+	height: 50px;
+}
+
+textarea {
+	padding-top: 20px;
+}
+
+input, textarea {
+	padding-left: $field-left-padding;
+	border-radius: 0; // needed for iOS to not round
+	margin-bottom: rem-calc(15);
+	background-color: transparent;
+	font-family: $body;
+	font-size: 14px;
+	letter-spacing: 0;
+	border: 1px solid $grey;
+
+	::placeholder {
+		color: $light-text-placeholder;
+	}
+
+	&.dark {
+		color: $white;
+		border: 1px solid $white;
+		&::placeholder {
+			color: $dark-text-placeholder;
+		}
+	}
+
+	&:focus,
+	&:active {
+		outline: none;
+		border: 2px solid $green;
+	}
+
+	&.error {
+		border: 2px solid $red;
+	}
+}
+
+// NOTE:: iOS will show a rounded rectangle and an internal shadow without this. If it is not
+// specified so specifically, it will affect desktop, which inversely would add an internal shadow
+// ref: https://stackoverflow.com/questions/23211656/remove-ios-input-shadow
+textarea, input[type="range"], input, input:matches([type="password"], [type="search"]) {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.tab {
+	font-family: $heading;
+	font-size: 15px;
+	font-weight: $bold;
+	letter-spacing: 0.7px;
+	text-align: center;
+	color: $white;
+	min-height: 48px;
+	padding: 14px rem-calc(10);
+	text-transform: uppercase;
+	cursor: pointer;
+
+	@include respond-above($bp-sm) {
+		padding: 14px rem-calc(20);
+	}
+	@include respond-above($bp-md) {
+		padding: 14px rem-calc(30);
+	}
+
+	&:hover {
+		background-color: $dk-green;
+	}
+}

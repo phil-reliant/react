@@ -1,0 +1,186 @@
+.results-panel {
+	padding-top: 48px;
+	background-color: $lt-grey;
+
+	@include respond-above($bp-sm) {
+		padding-top: 82px;
+	}
+
+	&__brand-column {
+		&__link-section {
+			padding-bottom: rem-calc(22);
+
+			.buttons {
+				.button {
+					margin-bottom: 8px;
+				}
+			}
+		}
+
+		&__brand-section {
+			margin-bottom: 50px;
+
+			@include respond-above($bp-sm) {
+				border-left: 2px solid $soft-black;
+				padding-left: rem-calc(15);
+			}
+
+			&__heading {
+				font-size: rem-calc(20);
+				line-height: rem-calc(23);
+				font-family: $heading;
+				font-weight: $bold;
+				text-transform: uppercase;
+				margin-bottom: 32px;
+			}
+
+			&__product-type-section {
+				&__heading {
+					font-size: rem-calc(18);
+					line-height: rem-calc(23);
+					font-family: $heading;
+					font-weight: $bold;
+					margin-top: 20px;
+				}
+
+				&__product-type-family {
+					margin-bottom: 15px;
+					&__heading {
+						font-size: rem-calc(14);
+						line-height: rem-calc(20);
+						font-family: $body;
+						font-weight: $regular;
+						cursor: pointer;
+						transition: 0.25s color ease-in-out;
+
+						&:after {
+							content: '>';
+							float: right;
+						}
+
+						@include respond-above($bp-sm) {
+							&:after {
+								content: '';
+								float: right;
+							}
+						}
+
+						&.active {
+							color: $blue;
+							font-weight: $bold;
+
+							&:after {
+								content: '>';
+								float: right;
+							}
+						}
+
+						&:hover {
+							color: $blue;
+							font-weight: $bold;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__product-family-column {
+		margin-bottom: 50px;
+
+		@include respond-above($bp-sm) {
+			border-left: 2px solid $soft-black;
+			padding-left: rem-calc(15);
+		}
+
+		&__heading {
+			font-size: rem-calc(20);
+			line-height: rem-calc(23);
+			font-family: $heading;
+			font-weight: $bold;
+			text-transform: uppercase;
+			margin-bottom: 32px;
+		}
+
+		a {
+			display: block;
+			color: $dk-grey;
+
+			&:hover {
+				color: $blue;
+				font-weight: $bold;
+				text-decoration: none;
+			}
+		}
+
+		&__link-section {
+			padding-bottom: rem-calc(22);
+			.buttons {
+				.button {
+					margin-bottom: 8px;
+				}
+			}
+		}
+
+		&__listing {
+			list-style-type: none;
+			padding-left: 0px;
+
+			&__item {
+				margin-bottom: 7px;
+				span {
+					font-size: 14px;
+				}
+				a {
+					display: flex;
+					align-items: center;
+					transition: 0.25s color ease-in-out;
+					font-size: 14px;
+
+					@include respond-above($bp-lg) {
+						color: $pseudo-black;
+					}
+
+					svg {
+						width: 20px;
+						height: 10px;
+						margin-left: 15px;
+						opacity: 0;
+						transition: 0.25s opacity ease-in-out;
+
+						@include respond-to($bp-lg) {
+							display: none;
+						}
+
+						path, polygon {
+							fill: $soft-black;
+							transition: 0.25s fill ease-in-out;
+						}
+					}
+					&:hover {
+						text-decoration: none;
+						color: $blue;
+
+						svg {
+							@include respond-above($bp-lg) {
+								opacity: 1;
+							}
+
+							polygon {
+								fill: $blue;
+							}
+
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.results-col-1, .results-col-1 {
+	@include respond-above($bp-lg) {
+		min-width: 304px;
+	}
+}
+

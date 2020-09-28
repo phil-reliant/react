@@ -1,0 +1,59 @@
+.flat-input-container {
+	position: relative;
+	
+	.flat-input {
+		display: block;
+		width: 100%;
+		border: 0px solid transparent;
+		border-bottom: 2px solid $pseudo-black;
+		height: 30px;
+		margin-right: auto;
+
+		&:focus,
+		&:active {
+			border: 0px solid transparent;
+			border-bottom: 2px solid $pseudo-black;
+		}
+	}
+	
+
+	&.has-magnifying-glass {
+		.flat-input {
+			padding-left: 30px;
+		}
+
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			height: 14px;
+			width: auto;
+
+			path {
+				fill: $blue;
+			}
+		}
+	}
+
+	&.has-arrow {
+		.flat-input {
+			padding-right: 58px;
+			padding-left: 0;
+			height: 46px;
+		}
+
+		svg {
+			width: 20px;
+			height: auto;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+
+			polygon {
+				fill: $pseudo-black;
+			}
+		}
+	}
+}

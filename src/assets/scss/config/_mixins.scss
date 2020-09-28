@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@mixin respond-to($bp) {
+  @media only screen and (max-width: $bp) {
+    @content;
+  }
+}
+@mixin respond-above($bp) {
+  @media only screen and (min-width: $bp + 1) {
+    @content;
+  }
+}
+@mixin respond-between($bp1, $bp2) {
+  @media only screen and (min-width: $bp1 + 1) and (max-width: $bp2) {
+    @content;
+  }
+}
+@mixin respond-to-height($bp) {
+  @media only screen and (max-height: $bp) {
+    @content;
+  }
+}
+@mixin respond-above-height($bp) {
+  @media only screen and (min-height: $bp + 1) {
+    @content;
+  }
+}
+@mixin respond-between-height($bp1, $bp2) {
+  @media only screen and (min-height: $bp1 + 1) and (max-height: $bp2) {
+    @content;
+  }
+}
+@mixin retina() {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+// IE 10+ Media Query (does not affect Edge)
+@mixin ie() {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+/* ==========================================================================
+   Placeholder Styling
+   ========================================================================== */
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+/* ==========================================================================
+	 Image Object Fit
+   ========================================================================== */
+
+@mixin imageObjectFit($fit: cover) {
+  @if ($fit == 'contain') {
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+
+    @supports (object-fit: contain) {
+      height: 100%;
+      left: 0;
+      object-fit: contain;
+      object-position: center;
+      top: 0;
+      transform: none;
+      width: 100%;
+    }
+  } @else {
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+
+    @supports (object-fit: cover) {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      object-position: center;
+      top: 0;
+      transform: none;
+      width: 100%;
+    }
+  }
+}

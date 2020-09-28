@@ -1,0 +1,61 @@
+.secondary-page-header {
+	position: relative;
+	padding: 95px 0 75px;
+
+	@include respond-above($bp-lg) {
+		padding: 210px 0 140px 0;
+	}
+
+	// NOTE:: these styles are largely replicated across product-catalog.scss, _post-archive.scss, resource-archive.scss, and secondary-page-header.scss
+	// NOTE:: if updating, updating there as well as potentially left-right.scss
+	.side-bars {
+		position: absolute;
+		top: 117px;
+		left: -60px;
+		@include respond-above($bp-xl) {
+			top: 180px;
+			left: 0px;
+		}
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+	}
+
+	&__inner {
+		position: relative;
+		z-index: 2;
+
+		@include respond-to($bp-md) {
+			max-width: 100%;
+		}
+
+		h1,
+		p {
+			color: #fff;
+			max-width: 700px;
+		}
+
+		h1 {
+			margin-top: 0;
+			margin-bottom: 0;
+			max-width: 611px;
+
+			@include respond-to($bp-md) {
+				max-width: 430px;
+			}
+		}
+
+		p {
+			max-width: 430px;
+			margin-bottom: 34px;
+		}
+	}
+
+}

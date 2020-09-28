@@ -1,0 +1,50 @@
+.social-buttons {
+	text-align: end;
+	display:flex;
+	margin-left: -10px; // eat up first button left margin for better left align
+
+	a {
+		width: 52px;
+		height: 52px;
+		margin: 0px 10px;
+		border: 1px solid $dark-line-color;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.25s background-color ease-in-out,
+			0.25s border-color ease-in-out;
+
+		@include respond-above($bp-md) {
+			width: 60px;
+			height: 60px;
+		}
+
+		img {
+			height: 21px;
+			width: 21px;
+
+			@include respond-above($bp-md) {
+				height: 24px;
+				width: 24px;
+			}
+		}
+
+		svg {
+			path {
+				fill-rule: nonzero;
+				transition: 0.25s fill ease-in-out;
+			}
+		}
+	}
+
+	a:hover {
+		background-color: $green;
+		border-color: $green;
+
+		svg {
+			path {
+				fill: #000000;
+			}
+		}
+	}
+}

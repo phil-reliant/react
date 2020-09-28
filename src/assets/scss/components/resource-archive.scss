@@ -1,0 +1,170 @@
+.resource-archive {
+	background-color: $white;
+	padding-bottom: 50px;
+
+	@include respond-above($bp-sm) {
+		padding-bottom: 100px;
+	}
+
+	// NOTE:: these styles are largely replicated across product-catalog.scss, _post-archive.scss, resource-archive.scss, and secondary-page-header.scss
+	// NOTE:: if updating, updating there as well as potentially left-right.scss
+	.side-bars {
+		position: absolute;
+		top: 117px;
+		left: -60px;
+		opacity: 0.5;
+		@include respond-above($bp-xl) {
+			top: 180px;
+		}
+		@include respond-above(1300px) {
+			left: 0px;
+		}
+	}
+
+	&__header {
+		padding: 215px 0 122px 40px;
+		margin-bottom: 82px;
+
+		@include respond-above($bp-sm) {
+			padding: 215px 0 122px 0px;
+		}
+	}
+
+	&__title {
+		color: $white;
+		max-width: 610px;
+	}
+
+	.filter-bar {
+		&__topic-dropdown, &__resource-type-dropdown {
+
+			margin-bottom: 12px;
+			input {
+				height: 30px;
+				padding-top: 9px 0px -9px 0px !important;
+			}
+
+			.select__clear-indicator, .select__dropdown-indicator, .select__placeholder {
+				color: $pseudo-black;
+			}
+
+			.select__indicator-separator {
+				background-color: $pseudo-black;
+			}
+
+			.select__menu {
+				border-radius: 0;
+			}
+
+			.select__option {
+				&:hover, &:focus, &:active {
+					background-color: $green;
+				}
+			}
+		}
+		&__search-area {
+			margin-top: 21px;
+		}
+	}
+
+	.resource-section, .filter-results-page {
+
+		&__header {
+			margin-bottom: 40px;
+		}
+
+		&__results-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+
+			&__item {
+				margin-bottom: rem-calc(40);
+				cursor: pointer;
+
+				.imgWrapper {
+					overflow: hidden;
+					height: 190px;
+					width: 100%;
+					img {
+						height: 190px;
+						width: 100%;
+						object-fit: cover;
+						transition: 0.25s transform ease-in-out;
+					}
+				}
+
+				&:hover {
+					.imgWrapper {
+						img {
+							transform: scale(1.1, 1.1);
+						}
+					}
+				}
+
+				.subhead {
+					display: block;
+					margin-top: 14px;
+					margin-bottom: 14px;
+					padding-bottom: 14px;
+					letter-spacing: 1px;
+					border-bottom: 2px solid #1E1E1E;
+					min-height: 32px; // force the height so no-category items still line up vertically
+				}
+
+				// NOTE: Excerpts are HTML and contain <p> tags, so we set this globally for all our resource items to ensure consistent spacings
+				p {
+					margin-top: 0px;
+					margin-bottom: 0px;
+				}
+
+				&__arrow-button {
+					svg {
+						width: 44px;
+						height: 16px;
+						margin-top: 13px;
+						polygon {
+							fill: $pseudo-black;
+						}
+					}
+				}
+			}
+		}
+
+		&__load-more {
+			appearance: none;
+			border: 0px solid transparent;
+			outline: none;
+			font-size: rem-calc(26);
+			color: $blue;
+			background: transparent;
+			cursor: pointer;
+			font-family: $heading;
+			font-weight: $bold;
+			padding: 0 0;
+			display: block;
+			margin-top: -15px;
+
+			&:focus,
+			&:active {
+				outline: none;
+			}
+		}
+	}
+
+	.filter-results-page {
+		.alt-colored-section-wrapper {
+			&:not(:first-child) {
+				padding-top: 60px;
+			}
+			padding-bottom: 60px;
+			&:nth-child(even) {
+				background-color: $lt-grey;
+			}
+
+			@include respond-above($bp-md) {
+				// margin-left: 50px;
+				// margin-right: 50px;
+			}
+		}
+	}
+}

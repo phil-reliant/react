@@ -1,0 +1,16 @@
+body {
+	width: 100vw;
+	max-width: 100vw;
+	overflow-x: hidden;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	// background-color: $pseudo-black;
+	font-family: $body;
+	color: $soft-black;
+
+	&.nav-open {
+		overflow: hidden;
+		height: 100vh;
+	}
+}

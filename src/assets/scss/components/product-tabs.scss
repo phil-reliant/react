@@ -1,0 +1,69 @@
+.product-tabs {
+	&__tabber {
+		&__tabs {
+			display: flex;
+			flex-direction: row;
+
+			&__tab {
+				width: 32%;
+				font-family: $heading;
+				font-size: 14px;
+				letter-spacing: 0.93px;
+				line-height: 23px;
+				text-align: center;
+				text-transform: uppercase;
+				border-bottom: 2px solid $grey;
+				padding-bottom: rem-calc(7);
+				cursor: pointer;
+
+				&.selected {
+					color: $blue;
+					border-bottom: 2px solid $blue;
+				}
+			}
+		}
+		&__content {
+			min-height: 200px;
+			padding-top: rem-calc(32);
+			font-size: rem-calc( 14 );
+			line-height: 20px;
+
+			p{
+				font-size: rem-calc( 14 );
+				line-height: 20px;
+			}
+
+			&__content-area {
+				height: 0px;
+				overflow: hidden;
+
+				&.selected {
+					height: auto;
+					overflow: unset;
+				}
+			}
+		}
+	}
+}
+
+.grid-row-container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+
+	.col {
+		padding: rem-calc(8);
+		background-color: $md-grey;
+	}
+
+	.two-col-1 {
+		grid-column: 1 / 1;
+	}
+
+	.two-col-2 {
+		grid-column: 2 / 2;
+	}
+
+	.alt {
+		background-color: $white;
+	}
+}

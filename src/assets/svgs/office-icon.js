@@ -1,0 +1,7 @@
+import React from 'react';
+
+const OfficeIcon = () => (
+	<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path class="cls-1" d="M91.22,79.49V23.13H57.52V9.3H8.78V79.49H5V90.7H95V79.49ZM72.08,34.08h8.68v8.68H72.08Zm0,15.29h8.68v8.68H72.08Zm0,15.29h8.68v8.68H72.08ZM54.24,34.08h8.67v8.68H54.24Zm0,15.29h8.67v8.68H54.24Zm0,15.29h8.67v8.68H54.24ZM36.39,18.79h8.68v8.68H36.39Zm0,15.29h8.68v8.68H36.39Zm0,15.29h8.68v8.68H36.39Zm0,15.29h8.68v8.68H36.39ZM18.94,18.79h8.68v8.68H18.94Zm0,15.29h8.68v8.68H18.94Zm0,15.29h8.68v8.68H18.94Zm0,15.29h8.68v8.68H18.94Z"/></svg>
+);
+
+export default OfficeIcon;

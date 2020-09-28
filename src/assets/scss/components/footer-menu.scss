@@ -1,0 +1,53 @@
+section.footer-menu {
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+
+		a {
+			color: $dark-text-primary;
+			transition: 0.25s color ease-in-out;
+			font-size: 15px;
+			line-height: 14px;
+			font-weight: 600;
+		}
+		a:hover {
+			color: $green;
+			text-decoration: none;
+		}
+	}
+
+	.menu-item {
+		padding-bottom: 1rem;
+		padding-right: 1rem;
+		font-family: $heading;
+
+		@include respond-above($bp-md) {
+			padding-bottom: 1rem;
+		}
+
+		&:last-child {
+			@include respond-above($bp-md) {
+				padding-bottom: 0;
+			}
+
+		}
+	}
+
+	&.primary {
+		.menu-item {
+			flex-basis: 50%;
+
+			&:nth-last-child(2) {
+				@include respond-above($bp-md) {
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&.secondary {
+		.menu-item {
+			flex-basis: 100%;
+		}
+	}
+}

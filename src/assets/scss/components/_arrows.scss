@@ -1,0 +1,65 @@
+.arrows {
+	display: flex;
+	margin-left: auto;
+
+	.arrow {
+		width: 30px;
+		display: flex;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+
+		&::after {
+			content: "";
+			width: 20px;
+			height: 2px;
+			background-color: $pseudo-black;
+			position: absolute;
+			right: 5px;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: 0.25s width ease-in-out, 0.25s background-color ease-in-out;
+			transform-origin: center right;
+		}
+
+		&.arrow-next {
+			justify-content: flex-end;
+			margin-left: 10px;
+		}
+
+		&.arrow-prev {
+			svg {
+				transform: rotate(180deg);
+			}
+
+			&::after {
+				left: 5px;
+			}
+		}
+
+		&.disabled {
+			cursor: not-allowed;
+			svg polygon {
+				fill: $disabled-grey;
+			}
+			&::after {
+				background-color: $disabled-grey;
+			}
+		}
+
+		&:not(.disabled):hover {
+			&::after {
+				width: 25px;
+			}
+		}
+	}
+
+	svg {
+		width: 7px;
+		height: auto;
+
+		polygon {
+			transition: 0.25s fill ease-in-out;
+		}
+	}
+}

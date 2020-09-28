@@ -1,0 +1,50 @@
+.lead-gen-interest-selection-form {
+	&__subtext {
+		font-family: $heading;
+		font-size: 15px;
+		margin-bottom: 0px;
+		margin-top: 0.5rem;
+	}
+
+	&__instructions {
+		font-family: $heading;
+		font-style: italic;
+		font-size: 13px;
+		color: $light-text-primary;
+		letter-spacing: 0.04px;
+		line-height: 18px;
+		margin-bottom: rem-calc(28);
+	}
+
+	&__form {
+		&__item {
+			display: block;
+			margin-bottom: rem-calc(15);
+			cursor: pointer;
+
+			input.text {
+				display: none;
+			}
+
+			span.check {
+				display: inline-block;
+				border: $grey solid 1px;
+				width: 100%;
+				height: 50px;
+				padding-top: 13px;
+				padding-left: $field-left-padding;
+				font-family: $heading;
+				font-size: 14px;
+				font-weight: $semibold;
+				color: black;
+				letter-spacing: 0;
+				transition: $transition-normal background-color ease-in-out, $transition-normal border ease-in-out;
+			}
+		}
+
+		&__item > input[type="checkbox"]:checked + .check {
+			background-color: $green;
+			border: $green solid 1px;
+		}
+	}
+}

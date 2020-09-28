@@ -1,0 +1,137 @@
+.template-archive-post {
+	background-color: $white;
+	padding-bottom: 50px;
+
+	@include respond-above($bp-sm) {
+		padding-bottom: 100px;
+	}
+
+	&__inner {
+
+		.row {
+			margin-right: 0px;
+			margin-left: 0px;
+			flex-direction: column-reverse;
+
+			@include respond-above( $bp-lg ){
+					flex-direction: row;
+			}
+		}
+	}
+
+	// NOTE:: these styles are largely replicated across product-catalog.scss, _post-archive.scss, resource-archive.scss, and secondary-page-header.scss
+	// NOTE:: if updating, updating there as well as potentially left-right.scss
+	.side-bars {
+		position: absolute;
+		top: 117px;
+		left: -60px;
+		opacity: 0.5;
+		@include respond-above($bp-xl) {
+			top: 180px;
+		}
+		@include respond-above(1300px) {
+			left: 0px;
+		}
+	}
+
+	&__load-more {
+		appearance: none;
+		border: 0px solid transparent;
+		outline: none;
+		font-size: rem-calc(26);
+		color: $blue;
+		background: transparent;
+		cursor: pointer;
+		font-family: $heading;
+		font-weight: $bold;
+		padding: 0 0;
+
+		&:focus,
+		&:active {
+			outline: none;
+		}
+	}
+
+	&__header {
+		padding: 215px 0 122px 40px;
+		margin-bottom: 82px;
+
+		@include respond-above($bp-sm) {
+			padding: 215px 0 122px 0px;
+		}
+	}
+
+	&__title {
+		color: $white;
+		max-width: 610px;
+	}
+
+	&__post-archive-list {
+		@include respond-above($bp-lg) {
+			padding-right: 110px;
+			padding-left: 0;
+		}
+
+	}
+
+	&__post-archive-modile-signup{
+		padding-top: 60px;
+		@include respond-above($bp-lg) {
+			display: none;
+		}
+	}
+
+
+	&__sidebar-container {
+		margin-bottom: 60px; // give space at bottom when wrapping/stacking on mobile
+
+		@include respond-above($bp-sm) {
+			margin-top: inherit;
+		}
+
+		@include respond-above($bp-lg) {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+		.single-post-body__sidebar{
+			margin-top: 0;
+		}
+
+		.post-search{
+			&__input-container{
+				margin-bottom: 30px;
+			}
+		}
+
+		.categories-listing{
+			margin-top: 0;
+			@include respond-above($bp-lg) {
+				margin-top: 50px;
+			}
+		}
+
+		.post-sidebar__signup{
+			display: none;
+			@include respond-above($bp-lg) {
+				display: block;
+			}
+
+			.form-wrapper {
+				.footer {
+					display: flex;
+					align-items: center;
+					.loading-spinner {
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+		.recent-posts{
+			display: none;
+			@include respond-above($bp-lg) {
+				display: block;
+			}
+		}
+	}
+}

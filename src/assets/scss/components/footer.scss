@@ -1,0 +1,296 @@
+.site-footer {
+	background-color: $dark-background;
+	color: $dark-text-primary;
+
+	&__inner {
+		max-width: 1240px;
+		padding-left: 40px;
+		padding-right: 40px;
+		padding-bottom: 8rem;
+		padding-top: 3.125rem;
+
+		@include respond-above($bp-lg) {
+			padding-top: 5rem;
+			padding-bottom: 3.5rem;
+		}
+
+		@include respond-above($bp-xl) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.first-row {
+			margin-bottom: 3.125rem;
+
+			@include respond-above($bp-md) {
+				margin-bottom: 5rem;
+			}
+
+			.logo {
+				cursor: pointer;
+
+				svg {
+					path,
+					rect,
+					polygon {
+						fill: $white;
+					}
+				}
+			}
+		}
+
+		.middle-row {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 2.125rem;
+
+			@include respond-to($bp-md) {
+				flex-direction: column;
+			}
+
+			@include respond-above($bp-md) {
+				margin-bottom: 3rem;
+			}
+
+			.column {
+				&.subscribe {
+					flex-basis: 100%;
+
+					@include respond-above($bp-md) {
+						flex-basis: 40%;
+					}
+
+					.h3 {
+						font-size: 26px;
+						line-height: 25px;
+						font-weight: bold;
+						margin-bottom: 15px;
+
+						@include respond-above($bp-md) {
+							font-size: 32px;
+							line-height: 31px;
+						}
+					}
+					.form-wrapper {
+						display: flex;
+						width: 100%;
+
+						.footer {
+							display: flex;
+							.loading-spinner {
+								padding-top: 10px;
+								padding-left: 10px;
+							}
+						}
+
+						form {
+							width: 100%;
+							border-bottom: 2px solid $dark-text-primary;
+							position: relative;
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+						}
+						.form-fields{
+							flex-grow: 1;
+						}
+						label{
+							border: 0;
+							clip: rect(1px, 1px, 1px, 1px);
+							clip-path: inset(50%);
+							height: 1px;
+							margin: -1px;
+							overflow: hidden;
+							padding: 0;
+							position: absolute;
+							width: 1px;
+							word-wrap: normal !important;
+							&:focus{
+								background-color: #eee;
+								clip: auto !important;
+								clip-path: none;
+								color: #444;
+								display: block;
+								font-size: 1em;
+								height: auto;
+								left: 5px;
+								line-height: normal;
+								padding: 15px 23px 14px;
+								text-decoration: none;
+								top: 5px;
+								width: auto;
+								z-index: 100000;
+							}
+						}
+						input {
+							border: 0;
+							outline: 0;
+							color: $dark-text-primary;
+							background: transparent;
+							margin-bottom: 0;
+							width: 100%;
+							padding-left: 0px;
+							padding-right: 40px; // room for right arrow
+
+							&:-webkit-autofill,
+							&:-webkit-autofill:hover,
+							&:-webkit-autofill:focus{
+								-webkit-transition-delay: 99999s;
+								color: $dark-text-primary !important;
+								-webkit-text-fill-color:  $dark-text-primary !important;
+								transition: background-color 5000s ease-in-out 0s;
+							}
+						}
+						.description, .error-message{
+							display: none;
+						}
+						.buttons{
+
+							.button{
+								min-width: 0;
+								padding-right: rem-calc( 16 );
+								padding-left: rem-calc( 16 );
+
+								&.--standard{
+									min-width: 0;
+								}
+
+								&:disabled{
+									background: transparent !important;
+								}
+
+								&:hover{
+									background: transparent !important;
+									&:before{
+										content: none;
+									}
+								}
+
+								.arrow-icon{
+									svg, polygon{
+										stroke: $white;
+										fill: $white;
+									}
+									position: static;
+									transform: none;
+									&:after{
+										background-color: $white;
+									}
+								}
+							}
+
+							button{
+								background: transparent;
+								&:disabled{
+									background: transparent;
+								}
+								width: auto !important;
+								span{
+									border: 0;
+									clip: rect(1px, 1px, 1px, 1px);
+									clip-path: inset(50%);
+									height: 1px;
+									margin: -1px;
+									overflow: hidden;
+									padding: 0;
+									position: absolute;
+									width: 1px;
+									word-wrap: normal !important;
+									&:focus{
+										background-color: #eee;
+										clip: auto !important;
+										clip-path: none;
+										color: #444;
+										display: block;
+										font-size: 1em;
+										height: auto;
+										left: 5px;
+										line-height: normal;
+										padding: 15px 23px 14px;
+										text-decoration: none;
+										top: 5px;
+										width: auto;
+										z-index: 100000;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				&.menu {
+					display: flex;
+					flex-basis: 100%;
+					flex-direction: column;
+					margin-top: 3.75rem;
+
+					@include respond-above($bp-md) {
+						flex-basis: calc(60% - 3.875rem);
+						max-width: 520px;
+						margin-left: 3.875rem;
+						flex-direction: row;
+						margin-top: 0;
+					}
+
+					@include respond-above($bp-lg) {
+						flex-basis: calc(60% - 6.875rem);
+						margin-left: 6.875rem;
+					}
+
+					.menu__column {
+						display: inline-block;
+
+						&.--one {
+							flex-basis: 66%;
+
+							@include respond-to($bp-md) {
+								flex-basis: 100%;
+							}
+						}
+
+						&.--two {
+							flex-basis: 34%;
+
+							@include respond-to($bp-md) {
+								flex-basis: 100%;
+								margin-top: 0.9rem;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.last-row {
+			display: flex;
+			justify-content: space-between;
+
+			@include respond-to($bp-md) {
+				flex-direction: column-reverse;
+			}
+
+			.copyright-wrapper {
+				display: flex;
+				align-items: center;
+				justify-content: left;
+
+				@include respond-to($bp-md) {
+					margin-top: 50px;
+				}
+
+				.copyright {
+					font-size: 15px;
+				}
+			}
+
+			.social-buttons-wrapper {
+				display: flex;
+				justify-content: flex-end;
+
+				@include respond-to($bp-md) {
+					justify-content: flex-start;
+				}
+			}
+		}
+	}
+}

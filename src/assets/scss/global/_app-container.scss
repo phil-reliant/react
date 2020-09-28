@@ -1,0 +1,6 @@
+.app-container {
+	&.nav-open {
+		min-height: $mobile-header-height;
+		background-color: $pseudo-black;
+	}
+}

@@ -1,0 +1,12 @@
+$colorMap: (
+	'green': $green,
+	'grey': $lt-grey,
+	'white': $white,
+	'black': $pseudo-black
+);
+
+@each $name, $color in $colorMap {
+	.bg-#{$name} {
+		background-color: $color;
+	}
+}

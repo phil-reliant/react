@@ -1,0 +1,82 @@
+.faq-accordion {
+
+	&--heading{
+		h4 {
+			font-size: rem-calc(32);
+			line-height: rem-calc(34);
+		}
+	}
+	&--entries {
+		margin-top: rem-calc(24);
+
+		&--entry {
+			max-width: 878px;
+			padding-right: 20px; // give space for +/- to avoid colliding with text on narrow widths
+			border-bottom: 2px solid $soft-black;
+			position: relative;
+
+			&:first-child {
+				border-top: 2px solid $soft-black;
+			}
+
+			&--faq-question {
+				font-family: $heading;
+				font-weight: $semibold;
+				font-size: rem-calc(18);
+				line-height: rem-calc(23);
+				max-width: 788px;
+				padding-top: 20px;
+				margin-bottom: 20px;
+				cursor: pointer;
+
+				&::after {
+					content: "";
+					width: 12px;
+					height: 12px;
+					background: url(../../images/plus-sign-blue.svg) no-repeat;
+					position: absolute;
+					right: 2px;
+					top: 26px;
+					transition: all 0.55s ease-in-out;
+				}
+
+				&.active {
+					color: $blue;
+
+					&::after {
+						background-color: green;
+						background: url(../../images/minus-sign-blue.svg) no-repeat;
+						transform: rotate(180deg);
+					}
+				}
+			}
+			&--faq-answer {
+				font-family: $body;
+				font-weight: $regular;
+				font-size: rem-calc(15);
+				line-height: rem-calc(21);
+				max-width: 788px;
+				overflow: hidden;
+				transition: all 0.35s ease-in-out;
+
+
+				&__inner {
+					margin-bottom: 20px;
+				}
+
+				&.active {
+					max-height: 500px;
+				}
+				&.inactive {
+					max-height: 0px;
+					margin-bottom: 2px;
+				}
+
+				.buttons {
+					margin-top: 8px;
+					margin-bottom: 24px;
+				}
+			}
+		}
+	}
+}

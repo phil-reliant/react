@@ -1,0 +1,51 @@
+.post-archive-list {
+	opacity: 0;
+	transform: translateY(10px);
+
+	&__cat-container {
+		border-bottom: 2px solid $pseudo-black;
+		margin-bottom: 21px;
+
+		span {
+			margin-bottom: 14px;
+			display: block;
+		}
+	}
+
+	&__single-post {
+		margin-bottom: 50px;
+		display: flex;
+		flex-direction: column;
+
+		@include respond-above($bp-md){
+			flex-direction: row;
+		}
+
+		&__image {
+			margin-bottom: 30px;
+			margin-right: 0px;
+			width: 100%;
+
+			@include respond-above($bp-md){
+				margin-right: 20px;
+				max-width: 160px;
+				max-height: 160px;
+				width: 100%;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: 50% 50%;
+				}
+			}
+		}
+
+
+
+		h6,
+		> p {
+			margin-bottom: 10px;
+		}
+	}
+}

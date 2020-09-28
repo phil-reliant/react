@@ -1,0 +1,130 @@
+.case-study-featured-tabber {
+
+	.bg-img {
+		position: absolute;
+		left: 0px;
+		z-index: -1;
+		top: -70px;
+		max-width: 500px;
+		width: 100%;
+		pointer-events: none;
+	}
+
+	&__listing-column {
+		padding: rem-calc(60) 0;
+		&__item {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			background-color: $dk-grey;
+			cursor: pointer;
+			padding: rem-calc(20);
+			margin: rem-calc(15) 0 rem-calc(15) -1.4rem;
+			transition: all 0.25s ease-in-out;
+
+			&:hover {
+				background-color: $green;
+				.case-study-featured-tabber__listing-column__item-text {
+					color: $light-text-primary;
+				}
+				.case-study-featured-tabber__listing-column__item-plus-sign {
+					filter: invert(100);
+				}
+			}
+
+			&-text {
+				font-size: 17px;
+				font-weight: $bold;
+				color: white;
+				letter-spacing: 0.05px;
+				line-height: 21px;
+				padding-right: 1rem;
+				transition: all 0.25s ease-in-out;
+			}
+			&-plus-sign {
+				transition: all 0.25s ease-in-out;
+			}
+
+			&.selected {
+				background-color: $green;
+				.case-study-featured-tabber__listing-column__item-text {
+					color: $light-text-primary;
+				}
+				&:hover .case-study-featured-tabber__listing-column__item-plus-sign {
+					filter: invert(0);
+				}
+			}
+		}
+	}
+
+	&__detail-column {
+		align-self: center;
+		padding: rem-calc(60) 0;
+
+		&__fade-area {
+			display: flex;
+			flex-direction: column;
+			min-height: 305px;
+			justify-content: center;
+
+			&__title {
+				font-family: $heading;
+				font-size: 15px;
+				font-weight: $bold;
+				letter-spacing: 2px;
+				text-align: center;
+				line-height: 15px;
+				color: $light-text-primary;
+				text-transform: uppercase;
+				margin-bottom: 25px;
+			}
+
+			&__quote {
+				font-family: $heading;
+				font-size: 28px;
+				font-weight: $semibold;
+				letter-spacing: 0.08px;
+				text-align: center;
+				line-height: 34px;
+				color: $light-text-primary;
+				padding: 0 rem-calc(40);
+				
+				@include respond-above($bp-md) {
+					padding: 0 rem-calc(70);
+				}
+			}
+
+			.buttons {
+				margin-top: 10px;
+			}
+		}
+
+		.data-changed {
+			animation: fade-in-keyframes $anim-swap-duration;
+		}
+
+		.fade-out {
+			animation: fade-out-keyframes $anim-swap-duration;
+			opacity: 0.01;
+		}
+		.fade-in {
+			animation: fade-in-keyframes $anim-swap-duration;
+			opacity: 1;
+		}
+
+		@keyframes fade-in-keyframes {
+			from {opacity: 0.01}
+			to {opacity: 1}
+		}
+
+		@keyframes fade-out-keyframes {
+			from {opacity: 1}
+			to {opacity: 0.01}
+		}
+	}
+
+	&__row {
+		align-items: center;
+		margin-left: 0px;
+	}
+}

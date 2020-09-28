@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Colors & Shades
+   ========================================================================== */
+$pseudo-black: #1E1E1E;
+$soft-black: #2F2F2F;
+$green: #D4F636;
+$dk-green: #C5E820;
+$white: #fff;
+$grey: #DEDEDE;
+$dk-grey: #2F2F2F;
+$md-grey: #EDF0F1;
+$lt-grey: #F8F8F8;
+$disabled-grey: #DEDEDE;
+$placeholder-grey: #757575;
+$blue: #005EFF;
+$red: #FF0033;
+
+$light-background: $white;
+$light-grey-background: $lt-grey;
+$light-text-primary: $dk-grey;
+$light-text-placeholder: $placeholder-grey;
+$dark-background: $pseudo-black;
+$dark-text-primary: $white;
+$dark-text-placeholder: $white;
+$dark-line-color: $white;
+$drop-shadow: #0000002B;
+$page-blocking-overlay: #000000CC;
+
+$global-font-size: 16px;
+
+$non-mobile-grid-gutter-width: 15px;
+$mobile-grid-gutter-width: 48px;
+$mobile-header-height: 64px;
+$global-layout-padding: 80px;
+$field-left-padding: 30px;
+$lead-gen-panel-height: 464px;
+$lead-gen-top-spacing: 80px;
+
+/* ==========================================================================
+   Font Families
+   ========================================================================== */
+$heading: 'MaisonNeue';
+$body: 'Lora';
+
+/* ==========================================================================
+   Font Weights
+   ========================================================================== */
+$bold: 700;
+$semibold: 600;
+$regular: 400;
+$light: 300;
+
+/* ==========================================================================
+   Widths & Breakpoints
+   ========================================================================== */
+
+// NOTE:: these are exported below as numbers only. If updating these, update corresponding values below (ex: breakpointSmall)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1300px;
+
+// global sizes
+$menu-height-sm: 64px;
+$menu-height-xl: 100px;
+
+// video component sizes
+$youtube-ratio: 0.5625; // multiply width by to match a 320x180 aspect ratio
+$youtube-width-sm: 400px;
+$youtube-height-sm: ($youtube-width-sm * $youtube-ratio);
+$youtube-width-md: 620px;
+$youtube-height-md: ($youtube-width-md * $youtube-ratio);
+$youtube-width-lg: 720px;
+$youtube-height-lg: ($youtube-width-lg * $youtube-ratio);
+$youtube-width-xl: 882px;
+$youtube-height-xl: ($youtube-width-xl * $youtube-ratio);
+
+
+/* ==========================================================================
+   Timings
+   ========================================================================== */
+$transition-normal: 0.25s;
+$anim-swap-duration: 0.5s;
+
+:export {
+	headingFont: $heading;
+
+	blueColor: $blue;
+	greenColor: $green;
+	lightGreyColor: $lt-grey;
+	medGreyColor: $md-grey;
+	darkGreyColor: $dk-grey;
+	greyColor: $grey;
+	pseudoBlackColor: $pseudo-black;
+	whiteColor: $white;
+
+	transitionNormal: $transition-normal;
+	leadGenTopSpacing: $lead-gen-top-spacing;
+
+	breakpointSmall: 576;
+	breakpointMedium: 768;
+	breakpointLarge: 992;
+
+	defaultDuration: 250;
+	formResetDurationInMS: 20000; // 20 seconds
+}

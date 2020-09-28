@@ -1,0 +1,6 @@
+.container-fluid {
+	@include respond-to($bp-md) {
+		padding-left: 26px;
+		padding-right: 26px;
+	}
+}

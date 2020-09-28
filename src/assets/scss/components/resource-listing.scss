@@ -1,0 +1,71 @@
+.resource-listing {
+
+	h6 {
+		margin-bottom: rem-calc(25);
+	}
+
+	&__item-container {
+		display: flex;
+		flex-wrap: wrap;
+
+		&__item {
+			flex: 1 1 245px;
+			margin-bottom: rem-calc(16);
+			cursor: pointer;
+			height: auto;
+
+
+			&__inner {
+				display: flex;
+				align-items: center;
+
+				svg {
+					display: inline-block;
+					margin-right: rem-calc(25);
+					flex: 0 0 60px;
+					align-self: start;
+
+					circle, g {
+						transition: all 0.25s ease-in-out;
+					}
+				}
+
+				p {
+					display: inline-block;
+					font-family: $heading;
+					font-weight: $bold;
+					font-size: 18px;
+					margin-bottom: 0px;
+				}
+
+				a {
+					color: $dk-grey;
+					max-width: 100%;
+					padding-right: 0px;
+					@include respond-above ($bp-md) {
+						max-width: 261px;
+						padding-right: 10px;
+					}
+				}
+
+				&:hover {
+					svg {
+						circle {
+							fill: $green;
+						}
+
+						g {
+							fill: $dk-grey;
+						}
+					}
+
+					a {
+						text-decoration: none;
+					}
+				}
+
+			}
+
+		}
+	}
+}

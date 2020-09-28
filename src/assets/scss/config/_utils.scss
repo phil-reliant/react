@@ -1,0 +1,52 @@
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+.--mobile-only {
+	@include respond-above($bp-lg) {
+		// NOTE:: Marked as important as element added to may also set a display (ex: display: flex)
+		display: none !important;
+	}
+}
+
+.--desktop-only {
+	@include respond-to($bp-lg) {
+		// NOTE:: Marked as important as element added to may also set a display (ex: display: flex)
+		display: none !important;
+	}
+}
+
+.--below-sm-only {
+	@include respond-above($bp-sm) {
+		// NOTE:: Marked as important as element added to may also set a display (ex: display: flex)
+		display: none !important;
+	}
+}
+.--above-sm-only {
+	@include respond-to($bp-sm) {
+		// NOTE:: Marked as important as element added to may also set a display (ex: display: flex)
+		display: none !important;
+	}
+}
+
+// suggested base styles for using a button that looks like an A tag, but doesn't represent a hyperlink
+// ref: https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
+.link-button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	text-decoration: underline;
+	display: inline;
+	margin: 0;
+	padding: 0;
+
+	&.no-decoration {
+		text-decoration: none;
+	}
+}
+
+.link-button:hover,
+.link-button:focus {
+	text-decoration: none;
+}

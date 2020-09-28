@@ -1,0 +1,172 @@
+.layout-logo-slider {
+	background-color: $white;
+	.container {
+		position: relative;
+		padding-left: 22px;
+		@include respond-above($bp-md) {
+			padding-left: 91px;
+			padding-right: 0;
+		}
+
+		&::before {
+			content: "";
+			width: calc(100% + 50vw);
+			background-color: $pseudo-black;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 48px;
+			@include respond-above($bp-md) {
+				left: 18px;
+			}
+		}
+
+		& > * {
+			position: relative;
+		}
+	}
+
+	&__inner {
+		padding: 30px 0 0;
+
+		@include respond-above($bp-md) {
+			padding: 50px 0 0;
+		}
+
+		img {
+			&.clickable {
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__title {
+		color: $white;
+		font-size: rem-calc(26);
+		line-height: rem-calc(29);
+		margin-left: 16px;
+		margin-right: 22px;
+
+		@include respond-above($bp-md) {
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+	}
+
+	&__arrows {
+		margin-left: -22px;
+		line-height: 0;
+		height: 54px;
+
+		@include respond-above($bp-md) {
+			margin-left: -73px;
+		}
+
+		button {
+			height: 54px;
+			width: 54px;
+			background-color: $green;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			position: relative;
+			padding: 0 0;
+			transition: all 0.25s ease-in-out;
+
+			&:hover {
+				background-color: rgba($green, 0.9);
+				.arrow-icon::after {
+					width: 25px;
+				}
+			}
+
+			svg {
+				height: 10px;
+				width: auto;
+				position:absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 0;
+			}
+
+			.arrow-icon {
+				position: absolute;
+				height: 10px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 26px;
+
+				&::after {
+					content: "";
+					width: 20px;
+					height: 2px;
+					background-color: $soft-black;
+					position: absolute;
+					right: 5px;
+					top: 50%;
+					transform: translateY(-50%);
+					transition: 0.25s width ease-in-out;
+					transform-origin: center right;
+				}
+			}
+		}
+
+		.arrow-left {
+			background-color: $dk-green;
+
+			&:hover {
+				background-color: rgba($dk-green, 0.9);
+			}
+
+			.arrow-icon::after {
+				left: 5px;
+			}
+
+			svg {
+				left: 0;
+				transform: rotate(180deg) translateY(50%);
+			}
+		}
+	}
+
+	.slick-slider {
+
+	}
+	.slick-slide {
+		margin-left: 20px;
+		@include respond-above($bp-md) {
+			margin-left: 0px;
+			margin-bottom: 12px;
+		}
+	}
+
+	.slick-track {
+		display: flex;
+		align-items: center;
+	}
+
+	&__slide {
+		display: flex !important;
+		align-items: center;
+		padding-left: 45px;
+		padding-right: 7px;
+
+		@include respond-above($bp-md) {
+			padding-left: 0px;
+			padding-right: 86px;
+		}
+
+		img {
+			max-width: 105px;
+			max-height: 105px;
+			height: auto;
+
+			@include respond-above($bp-md) {
+				max-width: 150px;
+				max-height: 150px;
+				height: auto;
+			}
+		}
+	}
+}

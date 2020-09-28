@@ -1,0 +1,37 @@
+.categories-listing {
+	margin-top: 30px;
+
+	@include respond-above($bp-sm) {
+		margin-top: 50px;
+	}
+
+	.small {
+		padding-bottom: 0px;
+		font-weight: 700;
+		letter-spacing: 1px;
+	}
+
+	&__listing {
+		margin: 0;
+		margin-top: 6px;
+		padding-left: 6px;
+		list-style-type: none;
+
+		&__item {
+			text-indent: -5px;
+			font-weight: $bold;
+			font-size: 14px;
+			margin-bottom: 5px;
+
+			a {
+				font-weight: 700;
+			}
+
+			&:before {
+				content: "-";
+				padding-right: 10px;
+				color: $blue;
+			}
+		}
+	}
+}

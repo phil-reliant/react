@@ -1,0 +1,37 @@
+.lead-gen-detail-form {
+	margin-top: rem-calc(50);
+
+	@include respond-above($bp-lg) {
+		margin-top: rem-calc(0);
+	}
+
+	input {
+		width: 100%;
+
+		@include respond-above($bp-lg) {
+			width: calc(100% - 5.125rem);
+		}
+	}
+
+	&__bottom-area {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 280px;
+
+		&__loading-area {
+			&.hidden {
+				display: none;
+			}
+		}
+	}
+
+
+	.two-up {
+		@include respond-above($bp-lg) {
+			width: 138px;
+			margin-right: 16px;
+		}
+	}
+}

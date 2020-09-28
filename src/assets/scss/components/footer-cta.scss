@@ -1,0 +1,144 @@
+.footer-cta {
+	h6 {
+		margin-bottom: 13px;
+
+		@include respond-above($bp-md) {
+			margin-bottom: 15px;
+			margin-top: 25px;
+		}
+	}
+
+	.title-row {
+		margin-bottom: 32px;
+		@include respond-above($bp-md) {
+			margin-bottom: 50px;
+		}
+	}
+
+	&.bg-img-container {
+		position: relative;
+		height: 100%;
+		img.bg-img {
+			position: absolute;
+			bottom: 0;
+			top: -40px;
+			right: 0;
+			width: 100%;
+			@include respond-above($bp-md) {
+				top: -80px;
+				width: 40%;
+			}
+		}
+	}
+
+	&__three-up-section {
+
+
+		&__container {
+			display: grid;
+			position: relative;
+			column-gap: rem-calc(20);
+			grid-template-columns: auto;
+			grid-template-rows: auto auto;
+			grid-template-areas: "head1"
+								 "body1"
+								 "head2"
+								 "body2"
+								 "head3"
+								 "body3";
+
+			.header-cell {
+				align-self: end;
+				margin-top: 0px;
+			}
+			.body-cell {
+				p {
+					font-size: rem-calc(15);
+					line-height: 21px;
+					margin-bottom: 0px;
+				}
+
+				.buttons {
+					@include respond-above($bp-md) {
+						margin-top: 20px;
+					}
+				}
+				.button.--link {
+					color: $pseudo-black;
+
+					.arrow-icon {
+						&:after {
+							background-color: $pseudo-black;
+						}
+
+						svg polygon {
+							fill: $pseudo-black;
+						}
+					}
+				}
+				&:not(:last-child) {
+					margin-bottom: 15px;
+
+					@include respond-above($bp-md) {
+						margin-bottom: 0px;
+					}
+				}
+			}
+
+			.hd-0 {
+				grid-area: head1;
+			}
+			.hd-1 {
+				grid-area: head2;
+			}
+			.hd-2 {
+				grid-area: head3;
+			}
+			.bd-0 {
+				grid-area: body1;
+			}
+			.bd-1 {
+				grid-area: body2;
+			}
+			.bd-2 {
+				grid-area: body3;
+			}
+
+			@include respond-above($bp-md) {
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: auto auto;
+				grid-template-areas: "head1 head2 head3"
+									 "body1 body2 body3";
+			}
+
+			&.--variation-1{
+				@include respond-above($bp-md) {
+					grid-template-columns: 1fr;
+					grid-template-rows: auto auto;
+					grid-template-areas: "head1"
+					"body1";
+				}
+			}
+			&.--variation-2{
+				@include respond-above($bp-md) {
+					grid-template-columns: 1fr 1fr ;
+					grid-template-rows: auto auto;
+					grid-template-areas: "head1 head2"
+					"body1 body2";
+				}
+			}
+			&.--variation-3{
+
+			}
+		}
+
+		&__module-ctas {
+			margin-top: 30px;
+
+			@include respond-above($bp-md) {
+				margin-top: 60px;
+			}
+		}
+	}
+
+}

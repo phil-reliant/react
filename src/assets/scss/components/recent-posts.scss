@@ -1,0 +1,50 @@
+.recent-posts {
+	margin-top: 30px;
+
+
+	@include respond-above($bp-sm) {
+		margin-top: 50px;
+	}
+
+	&__listing {
+		&__item {
+			margin-bottom: 30px;
+
+			@include respond-above($bp-sm) {
+				margin-bottom: 20px;
+			}
+
+			&__category {
+				border-bottom: 2px solid #1E1E1E;
+				margin-bottom: 21px;
+				padding-bottom: rem-calc(14);
+
+				span {
+					text-transform: uppercase;
+					font-weight: 700;
+					letter-spacing: 1px;
+				}
+			}
+			&__heading {
+				color: $soft-black;
+
+				&:hover {
+					color: $soft-black;
+					text-decoration: none;;
+				}
+			}
+			&__body {
+				font-size: 15px;
+			}
+			svg {
+				width: 44px;
+				height: 16px;
+				margin-top: 5px;
+				polygon {
+					fill: $pseudo-black;
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,106 @@
+.layout-type-resourcescta {
+	background-color: $white;
+}
+
+.layout-resources-cta {
+
+	&__inner {
+		position: relative;
+		padding-top: 30px;
+		padding-bottom: 30px;
+
+		@include respond-above($bp-lg) {
+			padding: 53px 0 53px 105px;
+		}
+
+		&::before {
+			content: "";
+			height: 100%;
+			width: 100vw;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: $green;
+			left: calc(50% - 50vw);
+
+			@include respond-above($bp-md) {
+				margin-left: 15px;
+			}
+
+			@include respond-above($bp-lg) {
+				width: calc(100% + 50vw);
+				left: 0;
+			}
+		}
+	}
+
+	&__heading {
+		margin-bottom: 30px;
+		@include respond-above($bp-lg) {
+			margin-bottom: 57px;
+		}
+
+	}
+
+	&__resource {
+		color: inherit;
+
+		@include respond-above($bp-lg) {
+			max-width: 445px;
+		}
+
+		&:hover {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		&:nth-of-type(1) {
+			margin-bottom: 50px;
+
+			@include respond-above($bp-lg) {
+				margin-bottom: 0;
+			}
+		}
+
+		&:nth-of-type(2) {
+			@include respond-above($bp-lg) {
+				margin-left: 55px;
+			}
+		}
+
+		&__title {
+			margin-bottom: 21px;
+			line-height: 29px;
+		}
+
+		&__type {
+			display: block;
+			padding-bottom: rem-calc(14);
+			margin-bottom: rem-calc(17);
+			border-bottom: 2px solid $pseudo-black;
+			font-family: $heading;
+			font-weight: $bold;
+			font-size: 14px;
+			line-height: 14px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+
+		&__excerpt {
+			p {
+				font-size: 15px;
+				line-height: 20px;
+			}
+		}
+
+		svg {
+			width: 44px;
+			height: auto;
+			margin-top: 21px;
+			path,
+			polygon {
+				fill: $pseudo-black;
+			}
+		}
+	}
+}

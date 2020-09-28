@@ -1,0 +1,50 @@
+.industry-slider__slide {
+	width: 250px;
+	height: 300px;
+	background-color: $pseudo-black;
+	display: flex;
+	transition: 0.25s background-color ease-in-out;
+
+	&__inner {
+		padding: 30px 33px;
+		width: 100%;
+		position: relative;
+	}
+
+	&__icon {
+		width: 113px;
+		height: 113px;
+		margin: 0 auto;
+		background-color: $white;
+		border-radius: 50%;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: 80px;
+
+		svg {
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	h6 {
+		color: $white;
+		margin-bottom: 53px;
+		transition: 0.25s color ease-in-out;
+	}
+
+	&.active,
+	&.have-hover:hover {
+		background-color: $green;
+		text-decoration: none;
+
+		h6 {
+			color: $soft-black;
+		}
+	}
+}

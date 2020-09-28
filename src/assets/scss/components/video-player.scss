@@ -1,0 +1,119 @@
+.layout-type-videoplayer {
+	background-color: $white;
+}
+
+.video-player {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+
+	.error {
+		color: $red;
+	}
+
+	.centered {
+		display: flex;
+		flex-direction: column;
+	}
+	.video-player__embed-area {
+		align-self: center;
+		position: relative;
+		margin: rem-calc(40) auto;
+
+		// fixed size container
+		width: 100%;
+		height: $youtube-height-sm;
+
+		@include respond-above($bp-md) {
+			width: $youtube-width-md;
+			height: $youtube-height-md;
+		}
+		@include respond-above($bp-lg) {
+			width: $youtube-width-lg;
+			height: $youtube-height-lg;
+		}
+		@include respond-above($bp-xl) {
+			width: $youtube-width-xl;
+			height: $youtube-height-xl;
+		}
+
+		img {
+			cursor: pointer;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+
+			&.hide {
+				display: none;
+			}
+		}
+
+		&:hover {
+			.video-player__embed-area__arrows {
+				button {
+					background-color: 	#c7e832;
+				}
+			}
+		} 
+			
+		&__arrows {
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			button {
+				height: 48px;
+				width: 48px;
+				background-color: $green;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				transition: all 0.25s ease-in-out;
+
+				@include respond-above($bp-md) {
+					height: 100px;
+					width: 100px;
+				}
+
+				svg {
+					height: 15px;
+					width: auto;
+
+					@include respond-above($bp-md) {
+						height: 30px;
+						margin-top: 4px;
+						margin-left: 4px;
+					}
+				}
+
+				&.hide {
+					display: none;
+				}
+			}
+		}
+
+		&__video {
+			&.hide {
+				display: none;
+			}
+
+			&__ytembed {
+				width: 100%;
+				height: $youtube-height-sm;
+				@include respond-above($bp-md) {
+					width: $youtube-width-md;
+					height: $youtube-height-md;
+				}
+				@include respond-above($bp-lg) {
+					width: $youtube-width-lg;
+					height: $youtube-height-lg;
+				}
+				@include respond-above($bp-xl) {
+					width: $youtube-width-xl;
+					height: $youtube-height-xl;
+				}
+			}
+		}
+	}
+}

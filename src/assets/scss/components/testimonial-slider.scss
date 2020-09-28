@@ -1,0 +1,24 @@
+.layout-type-testimonialslider {
+	background-color: $white;
+}
+.layout-testimonial-slider {
+
+	&__inner {
+		@include respond-to($bp-lg) {
+			padding-left: 0;
+		}
+	}
+
+	.arrows {
+		padding-left: $mobile-grid-gutter-width;
+		margin-top: 20px;
+
+		@include respond-above($bp-md) {
+			padding-left: $non-mobile-grid-gutter-width;
+		}
+
+		@include respond-above($bp-lg) {
+			padding-left: 242px;
+		}
+	}
+}

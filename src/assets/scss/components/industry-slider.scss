@@ -1,0 +1,34 @@
+.layout-industry-slider {
+	&__title-container {
+		margin-bottom: 36px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h5 {
+			margin-bottom: 0;
+		}
+	}
+
+	&__slick-wrapper {
+		// for adding space between slides (ref: https://github.com/kenwheeler/slick/issues/582#issuecomment-61882540)
+		@include respond-above($bp-md) {
+			margin-left: calc((100vw - 1140px) / 2 + 15px );
+		}
+
+		.slick-slide {
+			margin-right: 22px;
+		}
+		.slick-list {
+			overflow: visible; // make slider full-bleed instead of cutting off at column edge
+
+			@include respond-above($bp-sm) {
+				overflow: hidden;
+			}
+		}
+	}
+
+	&__arrows {
+		margin-top: 35px;
+	}
+}

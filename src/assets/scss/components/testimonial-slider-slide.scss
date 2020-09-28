@@ -1,0 +1,96 @@
+.testimonial-slide {
+	padding-left: $mobile-grid-gutter-width;
+	padding-right: $mobile-grid-gutter-width;
+
+	@include respond-above($bp-md) {
+		padding-left: 15px;
+		padding-right: 15px;
+
+	}
+	@include respond-above($bp-lg) {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include respond-above($bp-lg) {
+			flex-wrap: nowrap;
+		}
+
+		&.no-img {
+			margin-left: 13px;
+
+			.testimonial-slide__content {
+				@include respond-above($bp-lg) {
+					padding-left: 15px;
+				}
+			}
+		}
+	}
+
+	&__photo {
+		flex: 0 0 160px;
+		margin-bottom: 30px;
+
+		@include respond-above($bp-lg) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__content {
+		flex: 0 0 100%;
+
+		@include respond-above($bp-lg) {
+			padding-left: 82px;
+			flex: 0 0 calc(100% - 160px);
+		}
+
+		blockquote {
+			position: relative;
+			font-size: rem-calc(24);
+			line-height: rem-calc(32);
+			@include respond-above($bp-md) {
+				font-size: rem-calc(30);
+				line-height: rem-calc(37);
+			}
+			.qt-mark {
+				&.left {
+					position: absolute;
+					top: 0;
+					right: 100%;
+
+					@include respond-above($bp-lg) {
+						right: calc(100% + 7px);
+						
+					}
+
+				}
+			}
+		}
+	}
+
+	.attribution {
+		display: flex;
+		flex-direction: column;
+		@include respond-above($bp-md) {
+			flex-direction: row;
+		}
+
+		.attr__name {
+			font-weight: $semibold;
+		}
+
+		.attr__title {
+			font-weight: $regular;
+			margin-left: 0px;
+			@include respond-above($bp-md) {
+				margin-left: 5px;
+			}
+		}
+	}
+
+
+}

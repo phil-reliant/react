@@ -1,0 +1,151 @@
+.site-search {
+
+	&.header {
+		display: flex;
+		position: relative;
+		align-items: center;
+		padding-left: 26px;
+		padding-right: 26px;
+		animation: fadeInAnimation ease 3s; 
+            animation-iteration-count: 1; 
+            animation-fill-mode: forwards; 
+			@keyframes fadeInAnimation { 
+				0% { 
+					opacity: 0; 
+				} 
+				100% { 
+					opacity: 1; 
+				} 
+			} 
+	
+
+		@include respond-above($bp-lg) {
+			flex: 1 1 auto;
+			justify-content: flex-end;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+
+		.site-search__inner {
+			@include respond-to($bp-lg) {
+				width: 100%;
+			}
+
+			@include respond-above($bp-lg) {
+				position: relative;
+			}
+
+			button {
+				background: transparent;
+				border: none;
+				outline: none;
+
+
+				svg {
+					margin-top: 26px;
+					width: 18px;
+					height: 18px;
+					position: absolute;
+					transform: translateY(-50%);
+					cursor: pointer;
+					fill: transparent;
+					top: 22px;
+					right: 50px;
+
+					path {
+						fill: $blue;
+					}
+
+					&:focus {
+						outline: none;
+					}
+
+					@include respond-above($bp-md) {
+						top: unset;
+						right: 29px;
+						path {
+							fill: $white;
+						}
+					}
+
+					@include respond-above($bp-md) {
+						right: unset;
+						left: 0;
+						z-index: 9;
+					}
+				}
+			}
+		}
+
+		img {
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			top: 50%;
+			right: 29px;
+			transform: translateY(-50%);
+			cursor: pointer;
+
+			@include respond-above($bp-xl) {
+				right: unset;
+				left: 0;
+				z-index: 9;
+			}
+		}
+
+		.site-search__form {
+			flex: 0 0 100%;
+
+			// @include respond-between($bp-lg, $bp-xl) {
+			// 	position: absolute;
+			// 	width: 200px;
+			// 	background-color: $white;
+			// 	top: 100%;
+			// 	border-bottom: 10px solid $green;
+			// 	right: 0;
+			// 	transform: translateX(20px);
+			// 	opacity: 0;
+			// 	transition: 0.25s transform ease-in-out, 0.25s opacity ease-in-out;
+			// 	-webkit-box-shadow: 0px 7px 15px 4px rgba(0,0,0,0.17);
+			// 	box-shadow: 0px 7px 15px 4px rgba(0,0,0,0.17);
+			// }
+
+			&.active {
+
+				input {
+					@include respond-above($bp-md) {
+						width: 220px;
+						border-color: $white;
+					}
+				}
+			}
+		}
+
+		input {
+			height: 50px;
+			border: 1px solid $grey;
+			width: 100%;
+			padding: 0 57px 0 29px;
+			font-size: rem-calc(14);
+			margin-bottom: 0;
+
+			@include respond-above($bp-md) {
+				background-color: transparent;
+				color: $white;
+				border: none;
+				padding: 0 0 0 29px;
+				width: 0;
+				transition: 0.25s width ease-in-out, 0.25s border-color ease-in-out;
+				height:39px;
+				border-bottom: 2px solid transparent;
+			}
+
+
+			@include placeholder {
+				@include respond-above($bp-xl) {
+					color: $white;
+				}
+			}
+		}
+	}
+}

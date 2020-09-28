@@ -1,0 +1,12 @@
+.full-bleed-mobile-col {
+	@include respond-to($bp-md) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.full-bleed-right-mobile-col {
+	@include respond-to($bp-md) {
+		padding-right: 0;
+	}
+}

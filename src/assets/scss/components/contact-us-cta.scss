@@ -1,0 +1,126 @@
+.layout-type-contactusctas {
+	background-color: $white;
+}
+
+.contact-us-cta {
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-bottom: rem-calc(40);
+	}
+	&__row {
+		&__item {
+			margin-bottom: 10px;
+
+			@include respond-above($bp-md) {
+				margin-bottom: 0px;
+				&:first-child {
+					.contact-us-cta__row__item__inner {
+						margin-left: 0px;
+					}
+				}
+
+				&:last-child {
+					.contact-us-cta__row__item__inner {
+						margin-right: 0px;
+					}
+				}
+			}
+
+			a:hover {
+				text-decoration: none;
+			}
+
+			&__inner {
+				width: 100%;
+				height: 100%;
+				margin-left: 10px;
+				margin-right: 10px;
+				background-color: $pseudo-black;
+				padding: 30px 33px;
+				cursor: pointer;
+				transition: all 0.25s ease-in-out;
+
+				&__icon {
+					width: 113px;
+					height: 113px;
+					margin: 0 auto;
+					background-color: $white;
+					border-radius: 50%;
+					position: relative;
+
+					svg {
+						width: 50px;
+						height: 50px;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						transition: all 0.25s ease-in-out;
+
+					}
+				}
+
+				&__heading {
+					margin-top: 29px;
+					color: $white;
+					text-align: center;
+				}
+				&__body {
+					margin-top: 10px;
+					color: $white;
+					font-size: 15px;
+					letter-spacing: 0.04px;
+					line-height: 21px;
+					text-align: center;
+
+					a {
+						color: $white;
+						transition: all 0.25s ease-in-out;
+
+					}
+				}
+				&__arrow-btn {
+					margin-top: 20px;
+
+					svg {
+						width: 7px;
+						height: auto;
+						polygon {
+							fill: $white;
+							transition: all 0.25s ease-in-out;
+
+						}
+					}
+
+					.arrow-icon {
+						right: 0px !important;
+						&::after {
+							background-color: $white !important;
+						}
+					}
+				}
+
+				&:hover {
+					cursor: inherit;
+					a {
+						&:hover {
+							color: $green;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__buttons {
+		.buttons {
+			margin-top: 30px;
+			@include respond-above($bp-md) {
+				margin-top: 50px;
+			}
+		}
+	}
+}

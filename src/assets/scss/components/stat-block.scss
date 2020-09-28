@@ -1,0 +1,61 @@
+.stat-block {
+
+	color: $white;
+
+
+	&__stat-column {
+		padding-top: rem-calc(10);
+		padding-bottom: rem-calc(10);
+
+		&__data {
+			@include respond-to($bp-md) {
+				margin-bottom: 0.4rem;
+			}
+
+			&__number,
+			&__unit {
+				font-size: 98px;
+				line-height: 98px;
+				font-weight: $bold;
+				font-family: $heading;
+
+				@include respond-above($bp-md) {
+					font-size: 125px;
+					line-height: 125px;
+				}
+			}
+		}
+		&__description {
+			font-size: 20px;
+			font-family: $body;
+			line-height: rem-calc(27);
+			margin-bottom: 30px;
+			@include respond-above($bp-md) {
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+	&__stat-column:not(:last-child):after {
+		position: absolute;
+		display: inline-block;
+		content: "";
+		border-bottom: 1px solid $grey;
+		bottom: 10px;
+		left: $mobile-grid-gutter-width;
+		right: $mobile-grid-gutter-width;
+
+		@include respond-above($bp-lg) {
+			border-right: 1px solid $grey;
+			left: unset;
+			top: 15px;
+			right: 20px;
+			height: 190px;
+			width: 1px;
+		}
+		@include respond-above($bp-xl) {
+			left: unset;
+			right: 50px;
+		}
+	}
+}

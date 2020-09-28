@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="77px" height="77px" viewBox="0 0 77 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Chat Bot Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-46.4%" y="-46.4%" width="192.7%" height="192.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.305366848   0 0 0 0 0.305366848   0 0 0 0 0.305366848  0 0 0 0.504589161 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="01-Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Reliant-Homepage-v5" transform="translate(-1363.000000, -668.000000)">
+            <g id="Chat-Bot-Icon" filter="url(#filter-1)" transform="translate(1374.000000, 677.000000)">
+                <circle id="Oval" fill="#FFFFFF" cx="27.5" cy="27.5" r="27.5"></circle>
+                <path d="M38.2470588,17 L17.7529412,17 C16.2235294,17 15,18.228993 15,19.7652342 L15,33.7757544 C15,35.3119957 16.2235294,36.5409887 17.7529412,36.5409887 L36.4117647,36.5409887 C36.4423529,36.5409887 36.4729412,36.5409887 36.5035294,36.5717135 L40.6941176,38.9682498 C40.8470588,39.0604243 41,38.937525 41,38.7839009 L41,19.7652342 C41,18.228993 39.7458824,17 38.2470588,17 Z M34.3978495,30 L21.6021505,30 C21.2709677,30 21,29.775 21,29.5 C21,29.225 21.2709677,29 21.6021505,29 L34.3978495,29 C34.7290323,29 35,29.225 35,29.5 C35,29.775 34.7290323,30 34.3978495,30 Z M34.3978495,24 L21.6021505,24 C21.2709677,24 21,23.775 21,23.5 C21,23.225 21.2709677,23 21.6021505,23 L34.3978495,23 C34.7290323,23 35,23.225 35,23.5 C35,23.775 34.7290323,24 34.3978495,24 Z" id="Shape" fill="#005EFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

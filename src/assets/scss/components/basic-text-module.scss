@@ -1,0 +1,8 @@
+.basic-text-module {
+	&__body {
+		margin-top: 20px;
+		@include respond-above($bp-md) {
+			margin-top: 31px;
+		}
+	}
+}

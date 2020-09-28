@@ -1,0 +1,28 @@
+.text-flipper-container {
+	display: flex;
+	position: relative;
+	padding-bottom: 100px;
+	margin-bottom: 15px;				
+
+	@include respond-above($bp-md) {
+		padding-bottom: 90px;
+	}
+
+	.text-flipper {
+		top: 0;
+		left: 0;
+		position: absolute;
+		height: auto;
+		width: 100%;
+		transform: translateY(50px);
+		opacity: 0;
+		backface-visibility: hidden;
+
+		&__word {
+			color: $green;
+		position: absolute;
+
+			display: block;
+		}
+	}
+}

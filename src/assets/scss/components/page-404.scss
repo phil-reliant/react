@@ -1,0 +1,67 @@
+.page-404 {
+	background-color: $white;
+
+	&__menu-spacer {
+		background-color: $pseudo-black;
+		height: $menu-height-sm;
+		@include respond-above($bp-lg) {
+			height: $menu-height-xl;
+		}
+	}
+
+	&__left-img {
+		position: absolute;
+		top: 117px;
+		left: -60px;
+		@include respond-above($bp-xl) {
+			top: 180px;
+			left: 0px;
+		}
+	}
+
+	&__inner {
+		padding-top: rem-calc(112);
+		&__row {
+			padding-left: rem-calc(20); // make room for bars on narrow screens
+			padding-bottom: rem-calc(100); // make space under 'Go Back' button on narrow screens
+			&__left-side {
+				h4 {
+					margin-bottom: rem-calc(31);
+				}
+				p {
+					margin-bottom: rem-calc(50);
+					max-width: 430px;
+				}
+			}
+			&__right-side {
+				order: -1;
+
+				@include respond-above($bp-md) {
+					order: 1;
+				}
+
+				&__404-text {
+					color: $blue;
+					font-family: $heading;
+					font-size: rem-calc(100);
+					line-height: rem-calc(100);
+					font-weight: $bold;
+
+					@include respond-above($bp-sm) {
+						font-size: rem-calc(150);
+						line-height: rem-calc(150);
+					}
+					@include respond-above($bp-md) {
+						font-size: rem-calc(175);
+						line-height: rem-calc(175);
+					}
+					@include respond-above($bp-lg) {
+						font-size: rem-calc(232);
+						line-height: rem-calc(232);
+					}
+				}
+			}
+
+		}
+	}
+}

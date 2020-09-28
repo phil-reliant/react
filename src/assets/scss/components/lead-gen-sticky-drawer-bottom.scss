@@ -1,0 +1,116 @@
+.sticky-drawer-bottom {
+	background-color: $white;
+	border-top: 13px solid $green;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	z-index: 99;
+
+	&-wrapper {
+		position: relative;
+	}
+
+	&.open {
+		overflow-y: scroll;
+		height: 100%; // NOTE:: cannot use 100vh on mobile, ref: https://stackoverflow.com/a/37113430/18005
+		z-index: 99;
+	}
+	&.open-short {
+		height: 160px;
+		z-index: 99;
+	}
+
+	&__drawer-heading {
+		display: flex;
+		flex-direction: row;
+		height: 87px; // 100px total (subtracting 13px border-top)
+		padding: 26px 0px;
+		align-items: center;
+		cursor: pointer;
+
+		&__expand-button {
+			margin-right: 14px;
+			margin-left: 26px;
+
+			.arrow-up {
+				transform: rotate(270deg);
+			}
+
+			.arrow-down {
+				transform: rotate(90deg);
+			}
+
+			svg {
+				circle,
+				polyline,
+				polygon {
+					stroke: $soft-black;
+				}
+			}
+		}
+
+		&__h4 {
+			font-size: 18px;
+			letter-spacing: 0.07px;
+			line-height: 18px;
+			color: $light-text-primary;
+			margin-bottom: 0px;
+			cursor: pointer;
+			padding-right: 90px;
+		}
+
+		&__phone-button {
+			position: absolute;
+			right: 8px;
+			top: 8px;
+
+			svg {
+				circle {
+					fill: $blue;
+				}
+				path {
+					fill: $white;
+				}
+			}
+		}
+	}
+
+	&__drawer-contents {
+		&.collapsed {
+			height: 0px;
+			padding: 0px;
+			transition: height $transition-normal;
+		}
+		&.expanded {
+			padding: 0px 26px;
+			transition: height $transition-normal;
+		}
+
+		&__success-panel, &__first-panel, &__second-panel {
+			&.hide {
+				display: none;
+			}
+		}
+
+		&__success-panel {
+			.subtext {
+				font-family: $heading;
+				font-size: 15px;
+				margin-bottom: 0px;
+				margin-top: 0.5rem;
+			}
+		}
+
+		&__second-panel {
+			padding-bottom: 50px;
+		}
+	}
+}
+
+.floating-icon-area {
+	&__phone-button {
+		position: fixed;
+		right: 8px;
+		bottom: 8px;
+	}
+}

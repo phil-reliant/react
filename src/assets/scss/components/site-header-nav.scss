@@ -1,0 +1,222 @@
+.site-header__nav {
+	position: absolute;
+	top: 41px;
+	right: 0;
+	width: 0vw;
+	height: calc(100vh - 64px);
+	background-color: $white;
+	transition: 0.25s width ease-in-out;
+	padding-top: 30px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-right: -26px; // remove the gutter
+	overflow-x: hidden;
+
+	@include respond-above($bp-lg) {
+		position: relative;
+		height: auto;
+		width: auto;
+		background-color: transparent;
+		padding-top: 0;
+		top: unset;
+		left: unset;
+		right: unset;
+		transform: translateX(0);
+		margin-left: 0;
+		margin-right: 0;
+		display: flex;
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+		overflow-x: unset;
+	}
+
+	&.active {
+		width: calc(100vw + 1px);
+	}
+
+	&-menu {
+		list-style-type: none;
+		opacity: 0;
+		padding-left: 26px;
+		padding-right: 26px;
+		margin-bottom: 30px;
+		min-width: 200px;
+
+		@include respond-above($bp-lg) {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 0;
+			padding-left: 0px;
+			padding-right: 0px;
+			min-width: unset;
+		}
+
+		li {
+
+			a,
+			button {
+				color: $pseudo-black;
+				display: block;
+				font-size: rem-calc(18);
+				line-height: rem-calc(18);
+				width: 100%;
+				text-align: left;
+				appearance: none;
+				border: none;
+				outline: none;
+				background: transparent;
+
+				@include respond-above($bp-lg) {
+					color: $white;
+					font-size: rem-calc(15);
+					line-height: rem-calc(15);
+				}
+			}
+		}
+
+		.nav-menu__item {
+
+			&.--open {
+				button > svg {
+					transform: rotate(45deg);
+					rect {
+						fill: $blue;
+					}
+				}
+				button > span {
+					color: $blue;
+				}
+			}
+
+			&.--active {
+				& > a {
+					@include respond-above($bp-lg) {
+						color: $green;
+					}
+				}
+			}
+
+			& > a,
+			& > button {
+				font-weight: $semibold;
+				font-family: $heading;
+				padding: 11px 0;
+				cursor: pointer;
+				transition: 0.25s color ease-in-out;
+
+				@include respond-to($bp-lg) {
+					display: flex;
+					justify-content: space-between;
+				}
+
+				@include respond-above($bp-lg) {
+					padding: 56px 20px 22px;
+					position: relative;
+				}
+
+				svg {
+					transition: 0.25s transform ease-in-out;
+
+					@include respond-above($bp-lg) {
+						display: none;
+					}
+				}
+			}
+
+			&:hover {
+
+				& > a,
+				button {
+					@include respond-above($bp-lg) {
+						color: $green;
+						text-decoration: none;
+					}
+
+				}
+
+				.submenu {
+
+					@include respond-above($bp-lg) {
+						opacity: 1;
+						transform: translateY(0);
+						z-index: 1;
+						pointer-events: auto;
+					}
+
+				}
+			}
+
+			.submenu {
+				list-style-type: none;
+				padding-left: 22px;
+				height: 0;
+				overflow: hidden;
+
+				@include respond-above($bp-lg) {
+					position: absolute;
+					height: auto;
+					background-color: $white;
+					border-bottom: 10px solid $green;
+					transform: translateY(-20px);
+					transition: 0.25s opacity ease-in-out, 0.25s transform ease-in-out;
+					opacity: 0;
+					z-index: -1;
+					padding: 19px 60px 20px 19px;
+					-webkit-box-shadow: 0px 7px 15px 4px rgba(0,0,0,0.17);
+					box-shadow: 0px 7px 15px 4px rgba(0,0,0,0.17);
+					pointer-events: none;
+				}
+
+				&__item {
+
+					a {
+						padding: 8.5px 0;
+						display: flex;
+						align-items: center;
+						transition: 0.25s color ease-in-out;
+
+						@include respond-above($bp-lg) {
+							color: $pseudo-black;
+						}
+
+						svg {
+							width: 20px;
+							height: 10px;
+							margin-left: 15px;
+							margin-top: 2px; // pixel-perfect centering
+							opacity: 0;
+							transition: 0.25s opacity ease-in-out;
+							align-self: center;
+
+
+							@include respond-to($bp-lg) {
+								display: none;
+							}
+
+							path, polygon {
+								fill: $soft-black;
+								transition: 0.25s fill ease-in-out;
+							}
+						}
+						&:hover {
+							text-decoration: none;
+							color: $blue;
+
+							svg {
+								@include respond-above($bp-lg) {
+									opacity: 1;
+								}
+
+								polygon {
+									fill: $blue;
+								}
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

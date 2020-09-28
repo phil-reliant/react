@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-P7DWQW9');</script>
+	<!-- End Google Tag Manager -->
+
+	<meta charset="utf-8" />
+	<!-- favicon -->
+	<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png?v=E6mOJoY3Xa">
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png?v=E6mOJoY3Xa">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png?v=E6mOJoY3Xa">
+    <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest?v=E6mOJoY3Xa">
+    <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg?v=E6mOJoY3Xa" color="#005eff">
+	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico?v=E6mOJoY3Xa">
+	<link rel="stylesheet" href="IEUnsupported.css">
+    <meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!-- <meta name="description" content="We are the leading reseller of new &amp; certified pre-owned data center storage and third-party support, including EMC, NetApp, Brocade, Cisco, IBM, HP, and more." /> -->
+	<!-- <meta name="keywords" content="IT equipment, data storage, third-party support, storage hardware"> -->
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+	<!-- <title>Reliant Technology</title> -->
+
+	<!-- Detect unsupported browsers and show them a list of other browsers to install instead -->
+	<script type="text/javascript" async>
+		function get_browser() {
+			var ua = navigator.userAgent, tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+			if (/trident/i.test(M[1])) {
+				tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+				return { name: 'IE', version: (tem[1] || '') };
+			}
+			if (M[1] === 'Chrome') {
+				tem = ua.match(/\bOPR\/(\d+)/)
+				if (tem != null) { return { name: 'Opera', version: tem[1] }; }
+			}
+			if (window.navigator.userAgent.indexOf("Edge") > -1) {
+				tem = ua.match(/\Edge\/(\d+)/)
+				if (tem != null) { return { name: 'Edge', version: tem[1] }; }
+			}
+			M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+			if ((tem = ua.match(/version\/(\d+)/i)) != null) { M.splice(1, 1, tem[1]); }
+			return {
+				name: M[0],
+				version: +M[1]
+			};
+		}
+
+		var browser = get_browser()
+		var isSupported = isSupported(browser);
+
+		function isSupported(browser) {
+			var supported = true;
+			if ((browser.name === "MSIE" || browser.name === "IE")) {
+				supported = false;
+			}
+
+			return supported;
+		}
+
+		if (!isSupported) {
+			// NOTE:: This is maintained in IEUnsupported.html, then minified and put here
+			document.write("<div class='ie-unsupported-wrapper'><div class='ie-unsupported-wrapper__inner'><h1>Your Browser is Not Supported</h1><p class='ie-unsupported-wrapper__inner__p'>We recommend that you update to the latest version of a supported browser for viewing ReliantTechnology.com.</p><p class='ie-unsupported-wrapper__inner__p'>It's free and only takes a few moments.</p><div class='ie-unsupported-wrapper__inner__buttons'><a class='ie-unsupported-wrapper__inner__buttons__button' href='https://www.google.com/chrome/'>Chrome</a><a class='ie-unsupported-wrapper__inner__buttons__button' href='https://www.mozilla.org/en-US/firefox/new/'>Firefox</a><a class='ie-unsupported-wrapper__inner__buttons__button' href='https://www.microsoft.com/en-us/edge'>Edge</a></div></div></div>");
+		}
+	</script>
+
+	<!-- Start of Async Drift Code -->
+<script >
+	"use strict";
+	
+	window.addEventListener("load",function() {
+		window.setTimeout(() => {
+ 
+	!function() {
+	  var t = window.driftt = window.drift = window.driftt || [];
+	  if (!t.init) {
+		if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+		t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+		t.factory = function(e) {
+		  return function() {
+			var n = Array.prototype.slice.call(arguments);
+			return n.unshift(e), t.push(n), t;
+		  };
+		}, t.methods.forEach(function(e) {
+		  t[e] = t.factory(e);
+		}), t.load = function(t) {
+		  var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+		  o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+		  var i = document.getElementsByTagName("script")[0];
+		  i.parentNode.insertBefore(o, i);
+		  
+	let driftInterval = setInterval(function(){
+			let b = document.querySelector('#scripts');
+			if(b) {
+			let a = document.querySelector('#drift-widget-container')
+			if(a) {
+				b.appendChild(a)
+			}
+			clearInterval(driftInterval);
+			}
+			},100)
+
+		};
+	  }
+	}();
+	drift.SNIPPET_VERSION = '0.3.1';
+	drift.load('tu7cvu8fw5gv');
+
+
+}, 2000);
+	});
+		
+	</script>
+	<!-- End of Async Drift Code -->
+	<!-- SCRIPT START  -->
+	<script type="text/javascript">var ssaUrl = 'https://' + 'pixel.sitescout.com/iap/ffb7b421e2f84bb0';new Image().src = ssaUrl; (function(d) { var syncUrl = 'https://' + 'pixel.sitescout.com/dmp/asyncPixelSync'; var iframe = d.createElement('iframe'); (iframe.frameElement || iframe).style.cssText = "width: 0; height: 0; border: 0;"; iframe.src = "javascript:false"; if(d && d.body){d.body.appendChild(iframe); var doc = iframe.contentWindow.document; doc.open().write('<body onload="window.location.href=\''+syncUrl+'\'">');  doc.close(); } })(document); </script>
+		<script>
+			window['_fs_debug'] = false;
+			window['_fs_host'] = 'fullstory.com';
+			window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+			window['_fs_org'] = '1KN6M';
+			window['_fs_namespace'] = 'FS';
+			(function(m,n,e,t,l,o,g,y){
+				if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+				g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+				o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
+				y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+				g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+				g.anonymize=function(){g.identify(!!0)};
+				g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+				g.log = function(a,b){g("log",[a,b])};
+				g.consent=function(a){g("consent",!arguments.length||a)};
+				g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+				g.clearUserCookie=function(){};
+				g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+				if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+				g._v="1.2.0";
+			})(window,document,window['_fs_namespace'],'script','user');
+			</script>
+			
+		<!-- SCRIPT END  -->
+	
+	</head>
+  <body>
+	  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7DWQW9"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+	<div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

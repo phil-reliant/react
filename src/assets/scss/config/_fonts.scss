@@ -1,0 +1,41 @@
+// @font-face {
+// 	src: url('../../fonts/MaisonNeue-Demi.woff2') format('woff2'),
+// 		url('../../fonts/MaisonNeue-Demi.woff') format('woff');
+// 	font-family: $heading;
+// 	font-weight: $semibold;
+// }
+
+@font-face {
+	src: url('../../fonts/MaisonNeue-Bold.woff2') format('woff2'),
+		url('../../fonts/MaisonNeue-Bold.woff') format('woff');
+	font-family: $heading;
+	font-weight: $bold;
+}
+
+// @font-face {
+// 	src: url('../../fonts/Lora-Bold.ttf') format('truetype');
+// 	font-family: $body;
+// 	font-weight: $bold;
+// 	font-style: normal;
+// }
+
+@font-face {
+	src: url('../../fonts/Lora-BoldItalic.ttf') format('truetype');
+	font-family: $body;
+	font-weight: $bold;
+	font-style: italic;
+}
+
+@font-face {
+	src: url('../../fonts/Lora-Regular.ttf') format('truetype');
+	font-family: $body;
+	font-weight: $regular;
+	font-style: normal;
+}
+
+@font-face {
+	src: url('../../fonts/Lora-Italic.ttf') format('truetype');
+	font-family: $body;
+	font-weight: $regular;
+	font-style: italic;
+}

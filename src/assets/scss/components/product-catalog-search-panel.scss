@@ -1,0 +1,46 @@
+.search-panel {
+	padding-top: 48px;
+	padding-bottom: rem-calc(60);
+
+	@include respond-above($bp-sm) {
+		padding-top: 82px;
+		padding-left: 20%;
+		padding-right: 20px;
+	}
+
+	&__input-container {
+		position: relative;
+		margin-bottom: 30px;
+
+		@include respond-above($bp-sm) {
+			margin-bottom: 50px;
+		}
+
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			height: 14px;
+			width: auto;
+			path, polygon {
+				fill: $blue;
+			}
+		}
+	}
+
+	&__browse-by {
+		margin-top: 44px;
+		&__heading {
+			font-size: 15px;
+			font-family: $heading;
+			font-weight: $bold;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+		&__product-type-section {
+			margin-top: 55px;
+		}
+	}
+}

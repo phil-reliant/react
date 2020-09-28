@@ -1,0 +1,158 @@
+.site-header {
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	z-index: 9;
+
+	@include respond-above($bp-lg) {
+		position: absolute;
+	}
+
+	&__inner {
+		display: flex;
+		height: $mobile-header-height;
+		align-items: center;
+		padding-left: 25px;
+		padding-right: 25px;
+
+		@include respond-above($bp-lg) {
+			height: auto;
+			align-items: flex-start;
+			max-width: 1240px;
+		}
+		@include respond-above($bp-xl) {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
+
+	.logo {
+		cursor: pointer;
+		margin-top: 2px; // minor tweak for pixel perfect vertical alignment accounting for internal space of svg
+
+		svg {
+			path,
+			rect,
+			polygon {
+				fill: $white;
+			}
+		}
+	}
+
+	&__logo-container {
+		flex: 0 0 128px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+
+
+		@include respond-above($bp-lg) {
+			flex: 0 1 160px;
+			padding-right: 30px;
+			position: relative;
+			transform: translateY(0);
+			margin-top: 0px;
+			order: -1;
+
+		}
+
+		@include respond-above($bp-xl) {
+			flex: 0 1 270px;
+		}
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+		a {
+			display: block;
+
+			@include respond-above($bp-lg) {
+				margin-top: 39px;
+			}
+
+			svg {
+				width: 130px;
+
+				@include respond-above ($bp-md) {
+					width: 180px;
+				}
+			}
+		}
+	}
+
+	&__nav-container {
+		flex: 1 1 100%;
+		display: flex;
+		position: relative;
+		justify-content: flex-end;
+
+		@include respond-above($bp-lg) {
+			justify-content: flex-start;
+			align-items: center;
+		}
+	}
+
+	&__nav-toggle {
+		color: $white;
+		width: 37px;
+		height: 19px;
+		position: relative;
+		margin-top: -1px; // minor tweak for pixel perfect vertical alignment
+		cursor: pointer;
+
+		@include respond-above($bp-lg) {
+			display: none;
+		}
+
+		span {
+			width: 37px;
+			height: 3px;
+			background: $white;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: 0.25s transform ease-in-out, 0.25s opacity ease-in-out;
+
+			&:nth-of-type(2),
+			&:nth-of-type(3) {
+				top: 8px;
+				left: 0;
+				transition: 0.25s transform ease-in-out;
+				transform-origin: center center;
+			}
+
+			&:nth-of-type(4) {
+				top: 16px;
+				left: 0;
+			}
+		}
+
+		&.toggled {
+			span:nth-of-type(1),
+			span:nth-of-type(4) {
+				transform: scale(0.8);
+				opacity: 0;
+			}
+
+			span:nth-of-type(2) {
+				transform: rotate(45deg);
+			}
+
+			span:nth-of-type(3) {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+

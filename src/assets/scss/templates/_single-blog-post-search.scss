@@ -1,0 +1,45 @@
+.post-search {
+
+	&__input-container {
+		position: relative;
+		margin-bottom: 30px;
+
+		@include respond-above($bp-sm) {
+			margin-bottom: 50px;
+		}
+
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			height: 14px;
+			width: auto;
+
+			path {
+				fill: $blue;
+			}
+		}
+	}
+
+	&__input {
+		display: block;
+		width: 100%;
+		border: 0px solid transparent;
+		border-bottom: 2px solid $pseudo-black;
+		height: 30px;
+		padding-left: 30px;
+		max-width: 310px;
+		margin-right: auto;
+
+		&.no-max-width {
+			max-width: unset;
+		}
+
+		&:focus,
+		&:active {
+			border: 0px solid transparent;
+			border-bottom: 2px solid $pseudo-black;
+		}
+	}
+}
